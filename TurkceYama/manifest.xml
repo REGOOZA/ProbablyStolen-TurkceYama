@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Manifest>
+  <ID>turkce_yama_regoza</ID>
+  <Name>Türkçe Yama (Tam Çeviri)</Name>
+  <Author>REGOZA</Author>
+  <ModVersion>1.4</ModVersion>
+  <Description>Oyunun tüm metinlerini (6.698 satır) Türkçeye çevirir. Etkinleştirip oyunu yeniden başlatın; Türkçe, İngilizcenin (English) yerine geçer. İngilizce oynamak için modu kapatın.</Description>
+  <GameVersions>
+    <Version>0.46</Version>
+    <Version>0.46D</Version>
+  </GameVersions>
+  <Prerequisites />
+  <Assemblies>
+    <Assembly>TurkceYama.dll</Assembly>
+  </Assemblies>
+  <Capabilities />
+</Manifest>
