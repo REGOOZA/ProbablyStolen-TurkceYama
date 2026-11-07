@@ -1,5 +1,7 @@
 // Probably Stolen - Turkce Yama
-// Replaces the English (en) string tables with Turkish text loaded from tr.tsv in the mod folder.
+// Adds "Türkçe" to the game's language menu. The game has no API for new languages, so Turkish runs on top of
+// the English (en) locale: choosing Türkçe loads English and overwrites its string tables with tr.tsv; choosing
+// English puts the original English text back. The rest of the game (fonts, mods, locale checks) keeps seeing "en".
 // Keys missing from tr.tsv keep the game's own text, so new lines from game updates show in English.
 using System.Collections.Generic;
 using System.Text;
@@ -13,10 +15,14 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class TurkishPatchMod : IMod
 {
-    const string TargetLocaleCode = "en";
+    public const string BaseLocaleCode = "en";
     const string TranslationFile = "tr.tsv";
     // Dynamic TMP font that ships with the game and covers all Turkish letters.
     const string FallbackFontName = "LiberationSans SDF - Fallback";
+
+    public static TurkishPatchMod Instance;
+    // Whether Turkish or the original English text is wanted. Decided by the language menu (see TurkishLanguage).
+    public static bool TurkishWanted = true;
 
     ModManifest manifest;
     ModLog log;
@@ -25,11 +31,21 @@ public class TurkishPatchMod : IMod
     AsyncOperationHandle<IList<StringTable>> tablesHandle;
     bool hasTablesHandle;
     bool subscribed;
+    bool tablesReady;
+    // The tables themselves. The load handle can be released by the game later, so its Result is not kept around.
+    List<StringTable> loadedTables;
+    // English text of every entry we overwrote, and the entries we added, so English can be put back.
+    readonly Dictionary<StringTableEntry, string> originals = new Dictionary<StringTableEntry, string>();
+    readonly List<KeyValuePair<StringTable, long>> addedEntries = new List<KeyValuePair<StringTable, long>>();
+    bool turkishApplied;
+
+    public string ModId { get { return manifest.ID; } }
 
     public void Init(ModManifest manifest)
     {
         this.manifest = manifest;
         log = new ModLog(manifest);
+        Instance = this;
     }
 
     // Mod files can only be read once the loader has registered the mod, which happens after Init/OnEnable.
@@ -44,6 +60,12 @@ public class TurkishPatchMod : IMod
         if (subscribed)
             LocalizationSettings.SelectedLocaleChanged -= OnSelectedLocaleChanged;
         subscribed = false;
+    }
+
+    public void Log(string message)
+    {
+        if (log != null)
+            log.Log(message);
     }
 
     void OnModAssetsLoaded(LoadedMod mod)
@@ -68,50 +90,98 @@ public class TurkishPatchMod : IMod
 
     void OnSelectedLocaleChanged(Locale locale)
     {
-        bool turkish = locale != null && locale.Identifier.Code == TargetLocaleCode;
-        TurkishCase.Active = turkish;
+        UpdateCase();
         RefreshUppercaseText();
-        if (turkish)
+        if (IsBaseLocale(locale))
             PatchTables();
+    }
+
+    static bool IsBaseLocale(Locale locale)
+    {
+        return locale != null && locale.Identifier.Code == BaseLocaleCode;
+    }
+
+    static void UpdateCase()
+    {
+        TurkishCase.Active = TurkishWanted && IsBaseLocale(LocalizationSettings.SelectedLocale);
     }
 
     void PatchTables()
     {
         if (hasTablesHandle && tablesHandle.IsValid() && tablesHandle.IsDone)
         {
-            ApplyTranslations(tablesHandle);
+            OnTablesLoaded(tablesHandle);
             return;
         }
 
-        Locale locale = LocalizationSettings.AvailableLocales.GetLocale(TargetLocaleCode);
+        Locale locale = LocalizationSettings.AvailableLocales.GetLocale(BaseLocaleCode);
         if (locale == null)
         {
-            log.Warning("Locale '" + TargetLocaleCode + "' not found; Turkish patch not applied.");
+            log.Warning("Locale '" + BaseLocaleCode + "' not found; Turkish patch not applied.");
             return;
         }
 
         tablesHandle = LocalizationSettings.StringDatabase.GetAllTables(locale);
         hasTablesHandle = true;
-        tablesHandle.Completed += ApplyTranslations;
+        tablesHandle.Completed += OnTablesLoaded;
     }
 
-    void ApplyTranslations(AsyncOperationHandle<IList<StringTable>> handle)
+    void OnTablesLoaded(AsyncOperationHandle<IList<StringTable>> handle)
     {
         if (handle.Status != AsyncOperationStatus.Succeeded || handle.Result == null)
         {
-            log.Warning("Could not load the '" + TargetLocaleCode + "' string tables: " + handle.OperationException);
+            log.Warning("Could not load the '" + BaseLocaleCode + "' string tables: " + handle.OperationException);
             return;
         }
+        loadedTables = new List<StringTable>(handle.Result);
+        tablesReady = true;
+        ApplyLanguage(false);
+    }
 
-        int replaced = 0, added = 0, tables = 0;
-        foreach (StringTable table in handle.Result)
+    // Called by the language menu patches when Türkçe or English is chosen. Never throws into the game's menu.
+    public void SetTurkish(bool turkish)
+    {
+        bool changed = TurkishWanted != turkish;
+        TurkishWanted = turkish;
+        try
+        {
+            if (changed && tablesReady)
+                ApplyLanguage(true);
+            else
+                UpdateCase();
+        }
+        catch (System.Exception e)
+        {
+            log.Error("Could not switch to " + (turkish ? "Türkçe" : "English") + ": " + e);
+        }
+    }
+
+    void ApplyLanguage(bool refreshAll)
+    {
+        int changed = TurkishWanted ? ApplyTurkish(loadedTables) : RestoreEnglish();
+        turkishApplied = TurkishWanted;
+        log.Log((TurkishWanted ? "Türkçe" : "English") + ": " + changed + " strings changed.");
+
+        UpdateCase();
+        if (changed > 0 && IsBaseLocale(LocalizationSettings.SelectedLocale))
+        {
+            RefreshVisibleText();
+            if (refreshAll)
+                TurkishUiRefresher.RefreshGameLocalizers();
+        }
+        RefreshUppercaseText();
+    }
+
+    int ApplyTurkish(IList<StringTable> tables)
+    {
+        int replaced = 0, added = 0;
+        foreach (StringTable table in tables)
         {
             if (table == null)
                 continue;
             Dictionary<long, string> map;
             if (!translations.TryGetValue(table.TableCollectionName, out map))
                 continue;
-            tables++;
             var present = new HashSet<long>();
             foreach (StringTableEntry entry in table.Values)
             {
@@ -121,30 +191,46 @@ public class TurkishPatchMod : IMod
                 string text;
                 if (map.TryGetValue(entry.KeyId, out text) && entry.Value != text)
                 {
+                    if (!originals.ContainsKey(entry))
+                        originals[entry] = entry.Value;
                     entry.Value = text;
                     replaced++;
                 }
             }
-            // Add keys the target table lacks so they don't fall back to another language.
+            // Add keys the English table lacks so they don't fall back to another language.
             foreach (KeyValuePair<long, string> kv in map)
             {
                 if (!present.Contains(kv.Key))
                 {
                     table.AddEntry(kv.Key, kv.Value);
+                    addedEntries.Add(new KeyValuePair<StringTable, long>(table, kv.Key));
                     added++;
                 }
             }
         }
+        return replaced + added;
+    }
 
-        log.Log("Turkish patch: " + replaced + " strings replaced, " + added + " added, in " + tables + " tables.");
-        replaced += added;
-
-        Locale selected = LocalizationSettings.SelectedLocale;
-        bool turkishSelected = selected != null && selected.Identifier.Code == TargetLocaleCode;
-        TurkishCase.Active = turkishSelected;
-        if (replaced > 0 && turkishSelected)
-            RefreshVisibleText();
-        RefreshUppercaseText();
+    int RestoreEnglish()
+    {
+        if (!turkishApplied)
+            return 0;
+        int restored = 0;
+        foreach (KeyValuePair<StringTableEntry, string> kv in originals)
+        {
+            if (kv.Key.Value != kv.Value)
+            {
+                kv.Key.Value = kv.Value;
+                restored++;
+            }
+        }
+        foreach (KeyValuePair<StringTable, long> kv in addedEntries)
+        {
+            if (kv.Key != null && kv.Key.RemoveEntry(kv.Value))
+                restored++;
+        }
+        addedEntries.Clear();
+        return restored;
     }
 
     static void RefreshVisibleText()

@@ -3,8 +3,8 @@
   <ID>turkce_yama_regoza</ID>
   <Name>Türkçe Yama (Tam Çeviri)</Name>
   <Author>REGOZA</Author>
-  <ModVersion>1.5</ModVersion>
-  <Description>Oyunun tüm metinlerini (6.895 satır) Türkçeye çevirir. Etkinleştirip oyunu yeniden başlatın; Türkçe, İngilizcenin (English) yerine geçer. İngilizce oynamak için modu kapatın.</Description>
+  <ModVersion>1.6</ModVersion>
+  <Description>Oyunun tüm metinlerini (6.895 satır) Türkçeye çevirir. Etkinleştirip oyunu yeniden başlatın; dil menüsüne Türkçe eklenir. İngilizceye dönmek için dil menüsünden English seçin.</Description>
   <GameVersions>
     <Version>0.46</Version>
     <Version>0.46D</Version>
