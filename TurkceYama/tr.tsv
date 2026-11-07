@@ -33,7 +33,7 @@ NetworkUpgrade	5617922916380	Gecelik bir ücret ödenirse Wild, ağındaki satı
 NetworkUpgrade	5617922916381	Suç Dünyası Bağlantıları
 NetworkUpgrade	5617922916382	Gecelik bir ücret ödenirse Wild, ağındaki yüksek bütçeli kaçak mal alıcılarını Dükkânına yönlendirmeyi kabul eder. Bu hizmeti kullanmak sana az miktarda Karaborsa itibarı da kazandırır ({0} gün bekleme süresi)
 NetworkUpgrade	5617922916383	Kaçak Elektrik Hattı
-NetworkUpgrade	5617922916384	Elektriğin, ona (muhtemelen) ihtiyacı olmayan birine ait harici bir güneş panelinden sağlanır. Gecelik Elektrik Hizmeti artık ücretsiz.
+NetworkUpgrade	5617922916384	Elektriğin, ona (muhtemelen) ihtiyacı olmayan birine ait harici bir güneş panelinden sağlanır. Gecelik Elektrik Hizmeti artık ücretsiz. Güneş panelinin gücü Akım Dönüştürücülerini çalıştırmaya yetmediği için onların faturası hâlâ gelir, ama %15 daha ucuza çalışırlar. Elektrik kesintileri artık ne dükkânını ne de Akım Dönüştürücülerini etkiler.
 NetworkUpgrade	5617922916385	Ticari Sınıf Güç Kaynağı Ünitesi
 NetworkUpgrade	5617922916386	Güç kaynağı ünitin daha fazla güç kaldırabilecek şekilde yükseltilir. Şarj Cihazı ve PowerBloc %{0} daha hızlı şarj eder.
 NetworkUpgrade	5617927110656	Vitrin Genişletme I
@@ -51,7 +51,7 @@ NetworkUpgrade	5617927110667	Anında bir Hidroponik Başlangıç Kiti alırsın.
 NetworkUpgrade	5617927110668	Emekli Silah Ustası
 NetworkUpgrade	5617927110669	Anında bir Silah Ustası Başlangıç Kiti alırsın. Emekli bir silah ustası ertesi gün ve sonrasında haftada bir kez uğrayıp silah modları ve mühimmat satar. (Gelişmiş Silah Ustalığı İçeriğini açar.)
 NetworkUpgrade	5617927110670	Silah İzin Belgesi I
-NetworkUpgrade	5617927110671	Wild, sana normalde Alt Kat Tüccarlarına verilen bir ateşli silah izin belgesi ayarlamak için senin adına pazarlık edecek; böylece düşük seviye kaçak ateşli silah ve mühimmatın ticaretini yasal olarak yapabileceksin. İzin belgesi ancak Güvenlik İtibarın en az {0} olduğunda teslim edilecek.
+NetworkUpgrade	5617927110671	Wild, sana normalde Alt Kat Tüccarlarına verilen bir ateşli silah izin belgesi ayarlamak için senin adına pazarlık edecek; böylece düşük seviye kaçak ateşli silah ve mühimmatın ticaretini yasal olarak yapabileceksin. İzin belgesi Güvenlik İtibarın {0} seviyesine ulaştığında teslim edilir, 0'ın altına düşerse geri alınır. Bir pompalı edindiysen, Güvenlik onu kendini korumak için elinde tutmana izin verir.
 NetworkUpgrade	5617927110672	Silah İzin Belgesi II
 NetworkUpgrade	5617927110673	Wild, sana normalde Üst Kat Tüccarlarına verilen bir ateşli silah izin belgesi ayarlamak için senin adına pazarlık edecek; böylece orta seviye kaçak ateşli silah ve mühimmatın ticaretini yasal olarak yapabileceksin. İzin belgesi ancak Güvenlik İtibarın en az {0} olduğunda teslim edilecek.
 NetworkUpgrade	5617927110674	Silah İzin Belgesi III
@@ -114,6 +114,10 @@ NetworkUpgrade	93775592042577928	Wild'ın İşbitiricileri II
 NetworkUpgrade	93775592042577929	Wild sana daha deneyimli işbitiricilerini veriyor. Delilleri daha hızlı temizledikleri için suç şüphesi seviyen her gece daha fazla düşer. Gecelik ücret artar.
 NetworkUpgrade	93775592042577930	Wild'ın İşbitiricileri III
 NetworkUpgrade	93775592042577931	Wild en iyi ekibini dükkânının başına koyuyor. Tanıklar unutur, deliller ortadan kaybolur ve suç şüphesi seviyen her gece daha da hızlı düşer. Gecelik ücret artar.
+NetworkUpgrade	95679291312619520	Kaçak Elektrik Hattı II
+NetworkUpgrade	95679291337785344	Wild'ın ekibi hattına daha büyük bir güneş paneli dizisi ekler. Hat artık Akım Dönüştürücülerinin yükünün bir kısmını da taşır: %{0} daha ucuza çalışırlar.
+NetworkUpgrade	95679291337785345	Kaçak Elektrik Hattı III
+NetworkUpgrade	95679291337785346	Wild'ın ekibi senin için koca bir çatı dolusu panele bağlanır. Akım Dönüştürücülerin artık toplamda %{0} daha ucuza çalışır.
 Dialogue	335890120228864	Merhaba! Karşında ben varım, Georgio!
 Dialogue	336281029361664	Evet, *o* Georgio.
 Dialogue	420216455348224	Alt Katlar'ın EN BÜYÜK hurdacısı.
@@ -332,7 +336,7 @@ Dialogue	420216463736945	Ayrıca görev başında içki içerken yakalandı.
 Dialogue	420216463736946	Onu görürseniz derhal bildirin.
 Dialogue	420216463736947	Onunla iletişim kurmaya çalışmayın.
 Dialogue	420216463736948	Silahlı ve tehlikeli kabul ediliyor.
-Dialogue	420216463736949	400 Kredi ödül veriyoruz.
+Dialogue	420216463736949	300 Kredi ödül veriyoruz.
 Dialogue	420216463736950	Hey, benim, Serpico.
 Dialogue	420216463736951	Her şeyi bana yıkmaya çalışıyorlar.
 Dialogue	420216463736952	Bana inanmalısın!
@@ -2562,6 +2566,102 @@ Dialogue	91072420274552833	Güzel. Onun eline, senin değil. Haberim olur.
 Dialogue	91072420274552834	Hiç ailem kalmadı.
 Dialogue	91072420274552835	Bugünlük elimde bu kadar. {0} Kredi daha bulursam dedektifi tutabilirim.
 Dialogue	91851101476384768	Önce şu filtreyi çıkar. Ben sadece suyu almak istiyorum.
+Dialogue	92499267755491328	Uslu Nutrifruit'lere de ödül var. Hadi, birini seç.
+Dialogue	92499267755491329	Ooo, güzel seçim.
+Dialogue	92499267755491330	[İyiliğin karşılığını iste ({0}+ Alt Katlar itibarı)]
+Dialogue	92499267755491331	Alt Katlar'ın dostu için mi? Başka söze gerek yok.
+Dialogue	92499267755491332	[Ona {0} Kredi ver]
+Dialogue	92499267755491333	Dükkâncı. Burada gözaltına aldığımız kız hakkında konuşmamız lazım: Eleanor.
+Dialogue	92499267755491334	Biri ona tuzak kurmuş diye yemin ediyor. Kefaletini senin ödeyebileceğini söylüyor.
+Dialogue	92499267755491335	Kefalet {0} Kredi olarak belirlendi.
+Dialogue	92499267755491336	[Kefaletini öde ({0} Kredi)]
+Dialogue	92499267755491337	[Ona kefil ol ({0}+ Güvenlik itibarı)]
+Dialogue	92499267755491338	Tamamı ödendi. Yarına kadar dışarıda olur.
+Dialogue	92499267755491339	Peki, bize birkaç iyilikte bulundun. Bu seferlik göz yumacağız.
+Dialogue	92499267755491340	Sen bilirsin. O zaman olduğu yerde kalıyor.
+Dialogue	92499267755491341	Güvenlik beni bıraktı. Senin sayende olduğunu söylediler.
+Dialogue	92499267755491342	O sandık benim değildi, benim bir amcam bile yok.
+Dialogue	92499267755491343	Biri beni parmaklıklar ardında görmek istedi, tıpkı annem gibi.
+Dialogue	92499267755491344	Bunu unutmayacağım. Teşekkür ederim.
+Dialogue	92502523311341568	Genç adam çok aç, değil mi? Georgio'nun tesadüfen bir sandık Nutrifruit'i var.
+Dialogue	92502523311341569	{0} Kredi karşılığında Georgio onları senin yerine götürüp bırakır. Tek bir lokma bile taşımana gerek yok!
+Dialogue	92502523311341570	Hımm... ama Georgio duydu ki bu aralar Çöplük'e gidemiyormuşsun.
+Dialogue	92502523311341571	Dert etme! Georgio'nun tesadüfen bir sandık Nutrifruit'i var.
+Dialogue	92502523311341572	{0} Kredi karşılığında Georgio onları senin yerine götürüp bırakır. Yoksa Georgio, genç adamın dayanamayacağından korkuyor.
+Dialogue	92502523311341573	Harika! Genç adam bu gece kral gibi yiyecek.
+Dialogue	92502523311341574	Senin dostun Georgio'nun da dostudur!
+Dialogue	92502523311341575	Sorun değil dostum. Georgio, onu kendin doyuracağına güveniyor.
+Dialogue	92502523311341576	Georgio anlıyor. Umalım da genç adam kendi başına yiyecek bulsun.
+Dialogue	93341676211060736	Hop, ne oluyor? İndir şunu!
+Dialogue	93341676240420864	<i>*cesedi çevirir*</i> Dur bir dakika. Aday Memur Serpico.
+Dialogue	93341676240420865	<i>*kıkırdar*</i> Çenesini bir türlü kapalı tutamayan velet. Bizimkiler buna bayılacak.
+Dialogue	93341676240420866	Kurala bakarsan, o silahın aslında yalnızca Aug'lar için.
+Dialogue	93341676240420867	Ama aramızda kalsın: departmanı bir sürü evrak işinden kurtardın.
+Dialogue	93341676240420868	Bunu yakalama olarak kayda geçeriz. Ödül senin.
+Dialogue	93341676240420869	Dur. Beni ihbar mı ediyorsun? Şimdi mi?
+Dialogue	93341676240420870	Bak sen kimler gelmiş. Devrimci olmuş aday memurumuz.
+Dialogue	93341676240420871	Her şey çoktan ortaya çıktı. Her bir isim. Beni tutuklamak hiçbir şeyi değiştirmez.
+Dialogue	93341676240420872	Tutuklamaktan kim bahsetti?
+Dialogue	93341676240420873	Çuvallayın şunu.
+Dialogue	93341676240420874	Hayır... Bu gece gidiyorduk. Ailem rıhtımda bekliyor.
+Dialogue	93341676240420875	O zaman uzun süre bekleyecekler.
+Dialogue	93341676240420876	İyi karar, Vatandaş. Bir pürüz eksildi.
+Dialogue	93341676240420877	Bunda Aug yok... dur bir dakika. Li Bei Wen? Şu kimyager?
+Dialogue	93341676240420878	Ooo, iyi iş çıkardın, Vatandaş. O adam tehlikeliydi. Çok, ÇOK tehlikeli.
+Dialogue	93341676240420879	Hehe, bu dosyayı kapattığım için şirket temsilcisinden herhalde bir ikramiye koparırım.
+Dialogue	93341676240420880	Ödül senin. Cesedi biz alırız.
+Dialogue	93341676240420881	Dur. Bu yüzü tanıyorum. Arananlar listesinden: {0}.
+Dialogue	93341676240420882	O silah Aug'lar için, Dükkâncı. Bir daha bir vatandaşa doğrultursan çok farklı bir konuşma yaparız.
+Dialogue	93341676240420883	Ama tehlikeli bir suçlu için kimse uykusunu kaçırmaz. Yakalama olarak kayda geçeriz. Ödül senin.
+Dialogue	93341676240420884	AAAH! Bunu ödeyeceksin
+Dialogue	93341676240420885	Hey, beni korkutuyorsun...
+Dialogue	93341676240420886	Sakin ol. Lütfen. Sakin... ol.
+Dialogue	93341676240420887	Bu rutin bir güvenlik denetimi. Rutin. Çok rutin.
+Dialogue	93341676240420888	Bu seferki... özel. Emir en tepeden.
+Dialogue	93341676240420889	Eee, şey. Yük ambarını aç ve kenara çekil. Çabuk, vardiyam... yani, vardiyam bitmeden.
+Dialogue	93341676240420890	Pompalı da buna dahil. Teslim et.
+Dialogue	93341676240420891	Silah izin belgen pompalıyı da kapsıyor. Kendini korumak için sende kalsın.
+Dialogue	93341676240420892	Ooo. Dikkat et onunla, Nutrifruit. Bana karşı tek bir atış hakkın var, ona göre.
+Dialogue	93341676240420893	AAH!
+Dialogue	93341676240420894	...Bunu nereden buldun?
+Dialogue	93341676240420895	Bu küçük oyuncağı tanırım. Cumhuriyet malı.
+Dialogue	93341676240420896	Bunu eşyalarımın arasına saklayabilirdin. Onun yerine bana gösterdin.
+Dialogue	93341676240420897	Artık peşime düşecekler. Peki. Gelsinler bakalım.
+Dialogue	93341676240420898	Daha önce olanlar için özür dilerim. Şimdi senden yardım istemem gerek.
+Dialogue	93341676240420899	Silaha, mermiye, ilaca ihtiyacım var. Ne verebilirsen. Lütfen.
+Dialogue	93341676240420900	Tezgâha koy. Ne verebilirsen.
+Dialogue	93341676240420901	[Elimde Olan Bu Kadar]
+Dialogue	93341676240420902	Güzel. Daha fazlası varsa o da gelsin.
+Dialogue	93341676240420903	Bu iş görür. Hem de gayet güzel iş görür.
+Dialogue	93341676240420904	Teşekkürler, Nutrifruit. Benden haber alacaksın.
+Dialogue	93341676240420905	Yetmeyebilir. Nankörlük gibi olmasın ama.
+Dialogue	93341676240420906	Bununla idare edeceğim. Bana şans dile, Nutrifruit.
+Dialogue	93341676240420907	Dükkâncı, ekibim ve ben bir süredir Lou adında bir kadının izini sürüyoruz.
+Dialogue	93341676240420908	Onunla az önce tanıştığını düşünüyoruz. Cumhuriyet'e ihanet etmiş bir hain ve terörist.
+Dialogue	93341676240420909	Sıradan Güvenlik görevlileri onu tutamaz.
+Dialogue	93341676240420910	Buraya geri gelecek ve oyun oynamak isteyecek.
+Dialogue	93341676240420911	Bir psikopat, ama ne yapacağı belli bir psikopat. Sabırlı ol. Oyununa ayak uydur.
+Dialogue	93341676240420912	Bu vericiyi al. Onu, kadının yanında götüreceği bir şeyin içine sakla. Bir kutu, bir sandık, onunla birlikte giden herhangi bir şey.
+Dialogue	93341676240420913	Verici sığınağına ulaştığında içeri gireriz. Orada Cumhuriyet'in ele geçirmesi gereken istihbarat var.
+Dialogue	93341676240420914	Onu yakalamamıza yardım edersen {0} Kredi senin. Bundan kimseye tek kelime etme.
+Dialogue	93341676240420915	Dün vurduğun kadın. Yıllardır onda delik açabilen ilk kişisin. Tebrikler.
+Dialogue	93341676240420916	Cumhuriyet'e ihanet etmiş bir hain ve terörist. Üstelik affetmez. Peşini bırakmayacak.
+Dialogue	93341676240420917	En iyi şansın bizimle iş birliği yapmak.
+Dialogue	93341676240420918	Bu vericiyi al. İntikam almaya gelecek. Sana ne teslim ettirirse, vericiyi onun içine sakla.
+Dialogue	93341676240420919	Zahmetin için şimdi {0} Kredi. Onu yakaladığımızda {1} Kredi daha. Bundan kimseye tek kelime etme.
+Dialogue	93341676240420920	İş tamam. Onu yakaladık.
+Dialogue	93341676240420921	Cumhuriyet minnettar. İşte {0} Kredin.
+Dialogue	93341676240420922	Ömrünün geri kalanını gizli bir gözaltı tesisinde çürüyerek geçirecek.
+Dialogue	93341676240420923	İş tamam. Onu yakaladık. İki iyi elemanımıza mal oldu.
+Dialogue	93341676240420924	Geleceğimizi bir şekilde biliyordu. Ne tuhaf, değil mi?
+Dialogue	93341676240420925	Anlaştığımız gibi {0} Kredin. Cumhuriyet sözünü tutar.
+Dialogue	93341676240420926	Bundan sonra Güvenlik bu dükkânı yakından takip edecek. Ne olur ne olmaz.
+Dialogue	93341676240420927	Haberleri okudun herhalde. Bir Cumhuriyet amirali, bu istasyonda öldü.
+Dialogue	93341676240420928	Bunu o yaptı ve onu durdurabilirdik.
+Dialogue	93341676240420929	Onun konusunda anlaştığımızı sanıyordum.
+Dialogue	93341676240420930	Şanslısın ki onu bulmak için yakında buradan ayrılmamız gerekiyor, yoksa bu işteki payını daha derinlemesine araştırırdık.
+Dialogue	94001378955673600	Buralarda bir silah satıcısı tanıyorum. {0} Kredi gerisini karşılar.
+Dialogue	94001378997616640	[Ona {0} Kredi ver]
 PhoneDialogue	311964778496	[Aramayı Bitir]
 PhoneDialogue	525270302720	[Wild'ın Hizmetlerine Göz At]
 PhoneDialogue	1014057713664	Merhaba, burası Bay Wild'ın ofisi...
@@ -4240,6 +4340,21 @@ Mechanic	89091263672664069	{0} ({1} Kredi)
 Mechanic	89091263672664070	, 
 Mechanic	89091263672664071	Sertifikasız geçen her gün artar (başlangıç: %{0})
 Mechanic	89359339031252992	Maks. Saflık: %{0}
+Mechanic	90521366424240128	Yiyecek, Serpico'ya bir gün daha kazandırdı. Geri kalanını getirmek için kalan gece sayısı: {0}
+Mechanic	90521366449405952	Georgio, Serpico için Çöplük'e bir sandık Nutrifruit bıraktı.
+Mechanic	90934939390533632	Güvenlik alarmı kurulmadı: hücresi, alarmın gecede çektiği {0} kJ gücü sağlayamıyor.
+Mechanic	91360522599710720	Bedeninde bu hastalıktan kalıcı bir hasar var. Henüz tehlikeli değil ama geçmeyecek.
+Mechanic	91360522629070848	Bedenin bir enjeksiyonun daha kaçırılmasını kaldıramaz. Bir enjeksiyonu daha geciktirirsen ölürsün.
+Mechanic	91360522629070849	YETERSİZ ENERJİ
+Mechanic	91360522629070850	Renk
+Mechanic	91360522629070851	Yapılandır
+Mechanic	91360522629070852	Hesabına {0} Kredi eklendi. {1}, tezgâhında etkisiz hâle getirildi ve yakalama olarak kayda geçti.
+Mechanic	91360522629070853	Nutrifruit. Bu acıttı. Kızgın değilim, ETKİLENDİM. Ama bir kızın da masrafları var. Bu dolabı {0} Kredi değerinde malla doldur ve dükkânı kapatırken ön tezgâhına bırak. {1} gecen var. Ondan sonraki gece bütün dükkân bum diye uçar. Öpücükler.
+Mechanic	91360522629070854	Nutrifruit! Beni yüzüstü bırakmadın. Bunu yapabileceğini biliyordum. Dükkân için ufak bir şey. Öpücükler.
+Mechanic	91360522629070855	Alt Katlar'da Çatışma
+Mechanic	91360522629070856	Alt Katlar sakinleri, dün gece eski yük bölgesindeki terk edilmiş bir depodan uzun süre silah sesleri geldiğini bildirdi. Güvenlik, binayı tuzak tellerle donatılmış hâlde buldu; içeride ise sivil giyimli, ağır silahlı ve hiçbirinde istasyon kimliği bulunmayan birkaç kişinin cesedi vardı. Cesetlere sahip çıkan kimse olmadı.
+Mechanic	92020230687866880	Lou'nun istediği değer: {0} / {1} Kredi.
+Mechanic	92020230721421312	Kalan gece: {0}.
 MainMenu	128057131008	Yeni Oyun
 MainMenu	27025948327936	Emeği Geçenler
 MainMenu	26937549176832	Oyun Yükle
@@ -4398,6 +4513,51 @@ MainMenu	189909383209533440	Kare Hızı Sınırı
 MainMenu	190254464770031616	VSync
 MainMenu	190254464807780352	Sıradaki müşteriyi çağır (Zil)
 MainMenu	190649068024328192	Escape (yedek tuş)
+MainMenu	191034611836174336	Yerelleştirme
+MainMenu	191034611886505984	Direktör ve Proje Yöneticisi
+MainMenu	191034611886505985	Topluluk Yöneticisi
+MainMenu	191034611886505986	Takım Maskotu
+MainMenu	191034611886505987	Yayıncılık
+MainMenu	191034611886505988	CEO
+MainMenu	191034611886505989	Finans Direktörü
+MainMenu	191034611886505990	Yönetici Asistanı
+MainMenu	191034611886505991	İş Geliştirme ve Ortak Lisanslama Direktörü
+MainMenu	191034611886505992	Satış Direktörü
+MainMenu	191034611886505993	Yayıncılık Sorumlusu
+MainMenu	191034611886505994	Yürütücü Yapımcı
+MainMenu	191034611886505995	Yapımcı
+MainMenu	191034611886505996	Yardımcı Yapımcı
+MainMenu	191034611886505997	Kıdemli Pazarlama Müdürü
+MainMenu	191034611886505998	Pazarlama Müdürü
+MainMenu	191034611886505999	Influencer Yönetimi Sorumlusu
+MainMenu	191034611886506000	Kıdemli Influencer Yöneticisi
+MainMenu	191034611886506001	Kıdemli Topluluk Yöneticisi
+MainMenu	191034611886506002	Sosyal Medya Pazarlama Müdürü
+MainMenu	191034611886506003	Kullanıcı Edinme Müdürü
+MainMenu	191034611886506004	Platform Uyarlama Yapımcısı
+MainMenu	191034611886506005	LiveOps Yapımcısı
+MainMenu	191034611886506006	Geliştirme Hizmetleri Sorumlusu
+MainMenu	191034611886506007	Sürüm Yöneticisi
+MainMenu	191034611886506008	Yerelleştirme Yöneticisi
+MainMenu	191034611886506009	Discord Yöneticisi
+MainMenu	191034611886506010	Müşteri Destek Müdürü
+MainMenu	191034611886506011	QA Müdürü
+MainMenu	191034611886506012	Medya Prodüksiyon Sorumlusu
+MainMenu	191034611886506013	Medya Proje Yöneticisi
+MainMenu	191034611886506014	Fragman Yapımcısı
+MainMenu	191034611886506015	Video Editörü
+MainMenu	191034611886506016	Grafik Tasarımcı
+MainMenu	191034611886506017	İK Sorumlusu
+MainMenu	191034611886506018	Sistem Yöneticisi / DevOps Mühendisi
+MainMenu	191034611886506019	Popüler Kültür Karakterlerini Devre Dışı Bırak
+MainMenu	191034611886506020	Satın Alınan Eşyaları Envantere Taşı
+MainMenu	191034611886506021	Diyalog balonu boyutu
+MainMenu	191873762898788352	{0} oyununun son kaydı hasar görmüş (yazılırken bilgisayar kapanmış) ve kenara alındı. Oyun {1}. günden devam ediyor.
+MainMenu	191873762932342784	{0} oyununun kaydı hasar görmüş (yazılırken bilgisayar kapanmış) ve geriye daha önceki bir gün kalmamış. Dosyaları silinmedi, kayıt klasöründe kenara alındı.
+MainMenu	191873762932342785	Bu kayıt dosyası hasar görmüş (yazılırken bilgisayar kapanmış) ve yüklenemiyor. Kayıt klasöründe kenara alındı.
+MainMenu	191873762932342786	Alt-Tab Sonrası Ekranı Geri Yükle
+MainMenu	191873762932342787	Eşya menüsü, iptal (sağ tık)
+MainMenu	191873762932342788	Eşyayı ters çevir (alternatif tuş)
 UI	55710344593408	Devam Et
 UI	55727805480960	Öğretici Katmanı (O)
 UI	55768439898112	Seçenekler
@@ -5172,6 +5332,36 @@ UI	188903740813688837	Steam hesabını modlara asla izin verilmeyen bir şekilde
 UI	188903740813688838	başka bir program başlatmaya çalıştı; modlara buna asla izin verilmez
 UI	188903740813688839	Oyun tarafından durduruldu ve devre dışı bırakıldı: {0}. Bu modu sil ya da aboneliğinden çık; bu bilgisayarda çalıştıysa Steam şifreni değiştir.
 UI	188903740813688840	{0}, bu bilgisayarda oyun tarafından durduruldu, çünkü {1}. Bu sürüm bir daha etkinleştirilemez.
+UI	189286048303202304	Lou'nun teşekkür hediyesi: birini seç.
+UI	189289306782482432	Kasa Meraklısı ve Gurme Turist gibi popüler kültürden esinlenen karakterler artık dükkâna gelmez.
+UI	189289306782482433	Satın aldığın ya da takasta aldığın eşyalar doğrudan envanterine gider. Kapalıyken tezgâhta kalırlar. Sığmayan eşyalar her zaman tezgâhta kalır.
+UI	189289306782482434	Steam Atölyesi'nden kurulmadı: yüklenme tarihi ve puanları doğrulanamıyor.
+UI	189289306782482435	Yüklenme tarihi ve puanlar için Atölye kontrol ediliyor...
+UI	189289306782482436	Atölye yanıt vermedi: yüklenme tarihi ve puanlar bilinmiyor.
+UI	189289306782482437	Atölye'ye ilk yüklenme: {0} ({1})
+UI	189289306782482438	bir saatten az önce
+UI	189289306782482439	1 saat önce
+UI	189289306782482440	{0} saat önce
+UI	189289306782482441	1 gün önce
+UI	189289306782482442	{0} gün önce
+UI	189289306782482443	{0} hafta önce
+UI	189289306782482444	{0} ay önce
+UI	189289306782482445	1 yıl önce
+UI	189289306782482446	{0} yıl önce
+UI	189289306782482447	Puan veren kullanıcı sayısı: {0}
+UI	189289306782482448	Bu mod etkinleştirilemez.
+UI	189289306782482449	Günlüğü kopyalayıp modun yapımcısına gönder ya da bir hata raporuna ekle.
+UI	189289306782482450	Günlüğü kopyala
+UI	189289306782482451	Kopyalandı
+UI	189289306782482452	TEHLİKELİ OLABİLİR: {0}
+UI	189289306782482453	Dükkânda ve telefonda konuşma balonlarının, isim etiketlerinin ve yanıt seçeneklerinin boyutu. %100 normal boyuttur.
+UI	189702702328123392	{0} şu yetkileri istiyor:
+UI	189702702328123393	Bu yetkilere sahip bir mod, bu bilgisayarda senin yapabildiğin her şeyi yapabilir. Yalnızca güvendiğin yapımcıların modlarını etkinleştir.
+UI	189702702328123394	Yalnızca güvendiğin yapımcıların modlarını etkinleştir.
+UI	190128458793009152	Oyun Alt-Tab'dan tam ekran yerine küçük bir pencere olarak dönerse, seçtiğin tam ekran moduna geri geçer. Alt-Tab'dan sonra ekran siyah kalıyorsa (örneğin Linux'ta) bunu kapat.
+UI	190128458822369280	En az bir eşya izinli kalmalı.
+UI	190128458822369281	Dükkâncı
+UI	190788156584148992	Bu modun çevrim içi hizmetine oyunun sahibi olduğunu kanıtlamak
 Tutorial	77637327044608	Kepengi Aç
 Tutorial	77925890965504	Sıradaki Müşteriyi Çağır
 Tutorial	78096183902208	Etkileşim Menüsünü açmak için bir eşyaya Sağ Tıkla
@@ -5619,6 +5809,7 @@ ClientName	186448655309127680	Kasa Meraklısı
 ClientName	186688265071149056	Eleanor'ın Amcası
 ClientName	186688265100509184	Karaborsa Kabadayısı
 ClientName	186991818453073920	Hypertech Kaçakçısı
+ClientName	189734698179411968	Cumhuriyet Ajanı
 PerkTable	1443059515392	Birikim
 PerkTable	9267617513472	Oyuna fazladan {0} Kredi ile başlarsın.
 PerkTable	9267625902080	Kötü Kira Sözleşmesi
@@ -6697,3 +6888,9 @@ Item	89249160989818882	Mini İçki Şişesi
 Item	89249160989818883	Su Tankı
 Item	89249160989818884	Büyük bir sıvı kabı. Büyütmek için üzerinde hurda metal ya da bir metal külçe kullan.
 Item	89901428357513216	Üzerinde bir bandaj kullanarak Cam Şiş yap. Bandaj harcanmaz.
+Item	91520728700862464	Cumhuriyet Vericisi
+Item	91520728721833984	Cumhuriyet Ajanı'nın sana verdiği minik bir verici.
+Item	91520728721833985	Lou'nun yanında götüreceği bir şeyin içine sakla.
+Item	91520728721833986	Gece tezgâhına bırakılmış tek bir mermi. Kovanına "{0}" kazınmış.
+Item	91520728721833987	Lou'nun Dolabı
+Item	91520728721833988	Boş, kilitsiz, bekliyor. Doldur ve dükkânı kapatırken ön tezgâha bırak.

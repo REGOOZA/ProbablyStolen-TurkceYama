@@ -2,17 +2,17 @@
 
 ![Probably Stolen Türkçe Yama](TurkceYama/preview.png)
 
-*Probably Stolen* oyununun tüm metinlerini (6.698 satır) Türkçeye çeviren hayran yaması: menüler, eşyalar, diyaloglar, avantajlar, ağ yükseltmeleri ve mekanik açıklamaları.
+*Probably Stolen* oyununun tüm metinlerini (6.895 satır) Türkçeye çeviren hayran yaması: menüler, eşyalar, diyaloglar, avantajlar, ağ yükseltmeleri ve mekanik açıklamaları.
 
-- Sürüm: **1.4**
-- Desteklenen oyun sürümü: **0.46 / 0.46D**
+- Sürüm: **1.5**
+- Desteklenen oyun sürümü: **0.46 / 0.46D** (7 Kasım 2026 güncellemesi dahil)
 - Steam Workshop: https://steamcommunity.com/sharedfiles/filedetails/?id=3829264460
 
 ## Kurulum
 
 ### Steam Workshop (önerilen)
 1. Workshop sayfasından abone ol.
-2. Oyunu aç, **Mods** menüsünden **Türkçe Yama (Tam Çeviri)** modunu etkinleştir (Activate).
+2. Oyunu aç, **Mods** menüsünden **Türkçe Yama (Tam Çeviri)** modunu seç ve **Review and enable** ile etkinleştir.
 3. Oyunu yeniden başlat. Oyun Türkçe açılır.
 4. Oyunu daha önce başka bir dile aldıysan **Seçenekler > Dil** kısmından **English** seç.
 
@@ -25,7 +25,7 @@
    ...\Probably Stolen\Mods\TurkceYama\TurkceYama.dll
    ...\Probably Stolen\Mods\TurkceYama\tr.tsv
    ```
-4. Oyunda Mods > **Türkçe Yama (Tam Çeviri)** > Activate, sonra oyunu yeniden başlat.
+4. Oyunda Mods > **Türkçe Yama (Tam Çeviri)** > **Review and enable**, sonra oyunu yeniden başlat.
 
 Workshop sürümüyle elle kurulan kopyayı aynı anda açık tutma.
 
@@ -50,6 +50,6 @@ Workshop sürümüyle elle kurulan kopyayı aynı anda açık tutma.
 DLL, oyunun `Probably Stolen_Data\Managed` klasöründeki derlemelere (Assembly-CSharp, UnityEngine.CoreModule, Unity.Localization, Unity.ResourceManager, Unity.TextMeshPro, 0Harmony) referans vererek `src/*.cs` dosyalarından derlenir. Oyunun DLL'leri bu depoda yer almaz.
 
 ## English
-Full Turkish fan translation of *Probably Stolen* (6,698 lines). It replaces the English language: activate the mod and restart the game; deactivate it to play in English again.
+Full Turkish fan translation of *Probably Stolen* (6,895 lines). It replaces the English language: activate the mod and restart the game; deactivate it to play in English again.
 
 *Probably Stolen* ve tüm oyun içeriği Questing Goose Studio'ya aittir. Bu, resmî olmayan bir hayran çevirisidir.
